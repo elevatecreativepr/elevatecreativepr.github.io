@@ -43,7 +43,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:60;backdrop-filter:blur(16px);-w
   background:linear-gradient(rgba(8,8,10,.55),rgba(8,8,10,.82)),url('assets/hero-bg.webp') center/cover no-repeat}
 #dust{position:absolute;inset:0;pointer-events:none}
 .hero-inner{position:relative;z-index:2;padding:120px 32px 80px}
-.hero-logo{width:104px;height:104px;object-fit:cover;border-radius:22px;margin:0 auto 36px;box-shadow:0 24px 70px rgba(0,0,0,.65);border:1px solid rgba(211,171,99,.25)}
+.hero-logo-wrap{position:relative;display:inline-block;margin:26px auto 46px}
+.hero-logo-wrap::before{content:"";position:absolute;inset:-18% -30%;background:radial-gradient(ellipse at center, rgba(211,171,99,.17), transparent 65%);pointer-events:none}
+.hero-logo{width:min(460px,76vw);height:auto;position:relative;display:block;filter:drop-shadow(0 12px 44px rgba(0,0,0,.65)) drop-shadow(0 0 52px rgba(211,171,99,.22))}
 .eyebrow{font-size:11.5px;letter-spacing:.5em;color:var(--gold);margin-bottom:30px;font-family:'Montserrat';font-weight:400;text-indent:.5em}
 .hero h1{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(52px,8.4vw,116px);line-height:1.04;letter-spacing:.01em;margin-bottom:30px}
 .hero h1 em{font-style:italic;background:linear-gradient(100deg,#b98f4a,#ecd3a0 40%,#d3ab63 70%,#f4e3bb);-webkit-background-clip:text;background-clip:text;color:transparent;background-size:200% auto;animation:shine 6s linear infinite}
@@ -148,7 +150,9 @@ footer .tag{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1
 <header class="hero" id="top">
   <canvas id="dust"></canvas>
   <div class="hero-inner">
-    <img class="hero-logo rv" src="assets/logo-elevate-creative.jpg" alt="Elevate Creative">
+    <div class="hero-logo-wrap rv">
+      <img class="hero-logo" src="assets/logo-lockup.png" alt="Elevate Creative">
+    </div>
     <div class="eyebrow rv">AGENCIA DE MERCADEO DIGITAL</div>
     <h1 class="rv">Elevamos las <em>ventas</em><br>de tu negocio.</h1>
     <p class="rv">Convertimos la atención en ingresos. Estrategia, contenido y tecnología trabajando juntos para que tu marca crezca todos los días.</p>
