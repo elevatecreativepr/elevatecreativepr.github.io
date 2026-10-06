@@ -141,9 +141,27 @@ footer .tag{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1
 .team-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px;margin-top:64px}
 .member{border:1px solid var(--line);padding:54px 30px 48px;text-align:center;background:#0c0c0f;transition:.35s}
 .member:hover{border-color:rgba(211,171,99,.45);transform:translateY(-5px)}
-.member .pring{width:134px;height:134px;border-radius:50%;margin:0 auto 28px;border:1px solid rgba(211,171,99,.55);display:flex;align-items:center;justify-content:center;background:rgba(211,171,99,.05);overflow:hidden}
-.member .pring svg{width:46px;height:46px;stroke:rgba(211,171,99,.65);fill:none;stroke-width:1}
-.member .pring img.photo{width:100%;height:100%;object-fit:cover;display:block}
+.pring{width:134px;height:134px;border-radius:50%;border:1px solid rgba(211,171,99,.55);display:flex;align-items:center;justify-content:center;background:rgba(211,171,99,.05);overflow:hidden;flex-shrink:0}
+.member .pring{margin:0 auto 28px}
+.pring svg{width:46px;height:46px;stroke:rgba(211,171,99,.65);fill:none;stroke-width:1}
+.pring img.photo{width:100%;height:100%;object-fit:cover;display:block}
+.member{cursor:pointer}
+.member .ver{margin-top:16px;font-size:10px;letter-spacing:.3em;color:var(--gold);font-family:'Montserrat';font-weight:400;opacity:.75;transition:.3s}
+.member:hover .ver{opacity:1;letter-spacing:.36em}
+/* ---------- modal biografía ---------- */
+.bio-modal{position:fixed;inset:0;z-index:100;background:rgba(5,5,7,.85);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);display:flex;align-items:center;justify-content:center;padding:24px;opacity:0;pointer-events:none;transition:opacity .4s}
+.bio-modal.show{opacity:1;pointer-events:auto}
+.bio-card{position:relative;max-width:520px;width:100%;background:#0e0e11;border:1px solid rgba(211,171,99,.35);padding:60px 46px 52px;text-align:center;transform:translateY(26px) scale(.98);transition:transform .45s cubic-bezier(.2,.6,.2,1);box-shadow:0 40px 100px rgba(0,0,0,.6)}
+.bio-modal.show .bio-card{transform:none}
+.bio-card::before{content:"";position:absolute;top:0;left:12%;right:12%;height:1px;background:linear-gradient(90deg,transparent,rgba(211,171,99,.85),transparent)}
+.bio-close{position:absolute;top:12px;right:20px;background:none;border:none;color:var(--dim);font-size:32px;cursor:pointer;transition:.35s;line-height:1;font-weight:200}
+.bio-close:hover{color:var(--gold);transform:rotate(90deg)}
+.pring.lg{width:152px;height:152px;margin:0 auto 30px}
+.pring.lg svg{width:56px;height:56px}
+.bio-card h3{font-family:'Montserrat';font-size:13px;font-weight:400;letter-spacing:.3em;color:var(--gold);margin-bottom:8px}
+.bio-card .bio-name{font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:300;margin-bottom:18px}
+.bio-card .bio-name:empty{display:none}
+.bio-card p{color:#c9cbd1;font-size:15.5px;max-width:400px;margin:0 auto}
 .member h3{font-family:'Montserrat';font-size:14px;font-weight:400;letter-spacing:.26em;margin-bottom:12px}
 .member .soon{color:var(--dim);font-size:10px;letter-spacing:.32em;font-family:'Montserrat';font-weight:300}
 .rv{opacity:0;transform:translateY(34px);transition:opacity .9s cubic-bezier(.2,.6,.2,1),transform .9s cubic-bezier(.2,.6,.2,1)}
@@ -351,22 +369,26 @@ footer .tag{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1
     <div class="kicker rv">EL EQUIPO</div>
     <h2 class="h2 rv">Las mentes <em>detrás.</em></h2>
     <p class="lead rv">Tres áreas, un mismo estándar de excelencia. Sin intermediarios: hablas directamente con quienes hacen el trabajo.</p>
-    <!-- EQUIPO: para poner cada foto, sustituir el <svg> dentro de .pring por: <img class="photo" src="assets/equipo-N.jpg" alt="Nombre"> -->
+    <!-- EQUIPO: para poner cada foto, sustituir el <svg> dentro de .pring por: <img class="photo" src="assets/equipo-N.jpg" alt="Nombre">.
+         Las biografías se editan en el objeto BIOS al final del <script>. -->
     <div class="team-grid">
-      <div class="member rv">
+      <div class="member rv" data-key="redes">
         <div class="pring"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6.5 8-6.5s8 2.5 8 6.5"/></svg></div>
         <h3>MANEJO DE REDES</h3>
         <div class="soon">FOTO PRÓXIMAMENTE</div>
+        <div class="ver">VER BIOGRAFÍA</div>
       </div>
-      <div class="member rv">
+      <div class="member rv" data-key="diseno">
         <div class="pring"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6.5 8-6.5s8 2.5 8 6.5"/></svg></div>
         <h3>DISEÑO GRÁFICO</h3>
         <div class="soon">FOTO PRÓXIMAMENTE</div>
+        <div class="ver">VER BIOGRAFÍA</div>
       </div>
-      <div class="member rv">
+      <div class="member rv" data-key="web">
         <div class="pring"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6.5 8-6.5s8 2.5 8 6.5"/></svg></div>
         <h3>DISEÑO DE WEB</h3>
         <div class="soon">FOTO PRÓXIMAMENTE</div>
+        <div class="ver">VER BIOGRAFÍA</div>
       </div>
     </div>
   </div>
@@ -425,6 +447,17 @@ footer .tag{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1
   </div>
 </footer>
 
+<!-- Modal de biografía del equipo -->
+<div class="bio-modal" id="bioModal" aria-hidden="true">
+  <div class="bio-card">
+    <button class="bio-close" id="bioClose" aria-label="Cerrar">×</button>
+    <div class="pring lg" id="bioPhoto"></div>
+    <h3 id="bioRole"></h3>
+    <div class="bio-name" id="bioName"></div>
+    <p id="bioText"></p>
+  </div>
+</div>
+
 <script>
 document.getElementById('burger').addEventListener('click',function(){
   document.getElementById('navLinks').classList.toggle('open');
@@ -464,6 +497,28 @@ document.querySelectorAll('.acc-head').forEach(function(h){
     if(!wasOpen){ item.classList.add('open'); body.style.maxHeight=body.scrollHeight+'px'; }
   });
 });
+/* Biografías del equipo: se editan aquí (nombre + bio) cuando estén listas */
+var BIOS={
+  redes:{rol:'MANEJO DE REDES',nombre:'',bio:'Biografía próximamente.'},
+  diseno:{rol:'DISEÑO GRÁFICO',nombre:'',bio:'Biografía próximamente.'},
+  web:{rol:'DISEÑO DE WEB',nombre:'',bio:'Biografía próximamente.'}
+};
+var bioModal=document.getElementById('bioModal');
+document.querySelectorAll('.member').forEach(function(m){
+  m.addEventListener('click',function(){
+    var b=BIOS[m.dataset.key]; if(!b)return;
+    document.getElementById('bioPhoto').innerHTML=m.querySelector('.pring').innerHTML;
+    document.getElementById('bioRole').textContent=b.rol;
+    document.getElementById('bioName').textContent=b.nombre||'';
+    document.getElementById('bioText').textContent=b.bio;
+    bioModal.classList.add('show');bioModal.setAttribute('aria-hidden','false');
+    document.body.style.overflow='hidden';
+  });
+});
+function closeBio(){bioModal.classList.remove('show');bioModal.setAttribute('aria-hidden','true');document.body.style.overflow=''}
+document.getElementById('bioClose').addEventListener('click',closeBio);
+bioModal.addEventListener('click',function(e){if(e.target===bioModal)closeBio()});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeBio()});
 </script>
 </body>
 </html>
