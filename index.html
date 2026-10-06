@@ -102,9 +102,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:60;backdrop-filter:blur(16px);-w
 .work-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:26px;margin-top:70px}
 .work{border:1px solid var(--line);background:#101013;overflow:hidden;transition:.4s;display:flex;flex-direction:column;position:relative}
 .work:hover{transform:translateY(-8px);border-color:rgba(211,171,99,.5);box-shadow:0 30px 60px rgba(0,0,0,.5)}
-.work-band{height:170px;display:flex;align-items:center;justify-content:center;font-family:'Montserrat';font-weight:200;letter-spacing:.22em;font-size:16px;text-align:center;padding:0 24px;line-height:1.9;position:relative;overflow:hidden}
-.work-band::after{content:"";position:absolute;inset:0;background:linear-gradient(to top, rgba(0,0,0,.45), transparent 55%)}
-.work-band span{position:relative;z-index:1}
+.work-band{height:180px;display:flex;align-items:center;justify-content:center;text-align:center;padding:0 26px;position:relative;overflow:hidden;background:radial-gradient(ellipse 90% 110% at 50% 0%, #17171b, #0a0a0c 72%)}
+.work-band::before{content:"";position:absolute;top:0;left:18%;right:18%;height:1px;background:linear-gradient(90deg,transparent,rgba(211,171,99,.75),transparent)}
+.work-band::after{content:"";position:absolute;inset:0;background:linear-gradient(to top, rgba(0,0,0,.55), transparent 55%)}
+.work-band span{position:relative;z-index:1;font-family:'Cormorant Garamond',serif;font-weight:300;font-size:32px;letter-spacing:.05em;line-height:1.4;color:#f6f4ef}
 .work-body{padding:34px 30px 36px;flex:1;display:flex;flex-direction:column}
 .work-body h3{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:25px;letter-spacing:.02em;margin-bottom:10px}
 .work-body p{color:var(--gray);font-size:14px;margin-bottom:26px;flex:1}
@@ -307,7 +308,7 @@ footer .tag{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1
         <div class="acc-body"><div class="acc-body-in">
           <div class="work-grid" style="margin-top:10px">
             <div class="work">
-              <div class="work-band" style="background:linear-gradient(135deg,#051d49,#0d3578);color:#f7e012"><span>EL VACILÓN<br>DEL BSN</span></div>
+              <div class="work-band"><span>EL VACILÓN<br>DEL BSN</span></div>
               <div class="work-body">
                 <h3>El Vacilón del BSN</h3>
                 <p>Plataforma deportiva con una comunidad de más de 200,000 seguidores y cientos de millones de visualizaciones.</p>
@@ -315,7 +316,7 @@ footer .tag{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1
               </div>
             </div>
             <div class="work">
-              <div class="work-band" style="background:linear-gradient(135deg,#14101c,#3a2450);color:#f5f3ee"><span>BRILLANDO<br>JUNTOS</span></div>
+              <div class="work-band"><span>BRILLANDO<br>JUNTOS</span></div>
               <div class="work-body">
                 <h3>Brillando Juntos</h3>
                 <p>Sitio institucional de la organización: equipos, plantillas, torneos y comunidad en un solo lugar.</p>
@@ -323,7 +324,7 @@ footer .tag{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1
               </div>
             </div>
             <div class="work">
-              <div class="work-band" style="background:linear-gradient(135deg,#07271b,#0e5a3e);color:#f7e012"><span>ESMERALDAS<br>BALONCESTO</span></div>
+              <div class="work-band"><span>ESMERALDAS<br>BALONCESTO</span></div>
               <div class="work-body">
                 <h3>Esmeraldas de Barceloneta</h3>
                 <p>Presencia digital del equipo, con tienda de mercancía integrada y app instalable.</p>
@@ -331,7 +332,7 @@ footer .tag{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1
               </div>
             </div>
             <div class="work">
-              <div class="work-band" style="background:linear-gradient(135deg,#2c1a44,#6b3fa0);color:#f5f3ee"><span>INSPIRAT<br>PSYCHOLOGY</span></div>
+              <div class="work-band"><span>INSPIRAT<br>PSYCHOLOGY</span></div>
               <div class="work-body">
                 <h3>Inspirat Psychology</h3>
                 <p>Web completa para un negocio de repasos, con portal de estudiantes y aplicación instalable.</p>
