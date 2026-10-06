@@ -79,8 +79,26 @@ nav{position:fixed;top:0;left:0;right:0;z-index:60;backdrop-filter:blur(16px);-w
 .svc p{color:var(--gray);font-size:14.5px;max-width:300px}
 .svc .go{position:absolute;bottom:34px;right:36px;color:var(--gold);font-size:20px;opacity:0;transform:translateX(-8px);transition:.35s}
 .svc:hover .go{opacity:1;transform:none}
-/* ---------- portafolio ---------- */
+/* ---------- portafolio acordeón ---------- */
 #portafolio{background:#0a0a0c}
+.acc{border-top:1px solid var(--line);margin-top:70px}
+.acc-item{border-bottom:1px solid var(--line)}
+.acc-head{width:100%;background:none;border:none;color:var(--white);display:flex;align-items:center;gap:26px;padding:36px 10px;cursor:pointer;text-align:left;font-family:inherit}
+.acc-head .idx{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--gold);font-size:22px;min-width:40px}
+.acc-head .t{flex:1}
+.acc-head .t h3{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(28px,3.6vw,44px);letter-spacing:.01em;line-height:1.1}
+.acc-head .t p{color:var(--dim);font-size:11.5px;letter-spacing:.24em;font-family:'Montserrat';margin-top:8px;font-weight:300}
+.acc-head .pm{width:46px;height:46px;border:1px solid rgba(211,171,99,.4);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:22px;font-weight:200;transition:.4s;flex-shrink:0;line-height:1}
+.acc-item.open .pm{transform:rotate(45deg);background:var(--gold);color:#08080a;border-color:var(--gold)}
+.acc-body{max-height:0;overflow:hidden;transition:max-height .65s cubic-bezier(.2,.6,.2,1)}
+.acc-body-in{padding:6px 10px 56px}
+.sub-t{font-family:'Montserrat';font-size:12px;letter-spacing:.34em;color:var(--gold);margin:36px 0 20px;display:flex;align-items:center;gap:18px;font-weight:400}
+.sub-t:first-child{margin-top:10px}
+.sub-t::after{content:"";flex:1;height:1px;background:var(--line)}
+.ph-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px}
+.ph-slot{aspect-ratio:4/3;border:1px dashed rgba(211,171,99,.35);display:flex;flex-direction:column;gap:12px;align-items:center;justify-content:center;color:var(--dim);background:rgba(211,171,99,.03)}
+.ph-slot svg{width:30px;height:30px;stroke:rgba(211,171,99,.55);fill:none;stroke-width:1}
+.ph-slot span{font-size:10px;letter-spacing:.3em;font-family:'Montserrat';font-weight:300}
 .work-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:26px;margin-top:70px}
 .work{border:1px solid var(--line);background:#101013;overflow:hidden;transition:.4s;display:flex;flex-direction:column;position:relative}
 .work:hover{transform:translateY(-8px);border-color:rgba(211,171,99,.5);box-shadow:0 30px 60px rgba(0,0,0,.5)}
@@ -235,41 +253,93 @@ footer .tag{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1
 
 <section id="portafolio">
   <div class="wrap">
-    <div class="kicker rv">TRABAJO REAL</div>
-    <h2 class="h2 rv">Portafolio <em>en vivo.</em></h2>
-    <p class="lead rv">Proyectos reales, publicados y generando resultados hoy mismo. Tócalos: todos están en línea.</p>
-    <div class="work-grid">
-      <div class="work rv">
-        <div class="work-band" style="background:linear-gradient(135deg,#051d49,#0d3578);color:#f7e012"><span>EL VACILÓN<br>DEL BSN</span></div>
-        <div class="work-body">
-          <h3>El Vacilón del BSN</h3>
-          <p>Plataforma deportiva con una comunidad de más de 200,000 seguidores y cientos de millones de visualizaciones.</p>
-          <a href="https://elvacilondelbsn.github.io/" target="_blank" rel="noopener">VISITAR SITIO</a>
-        </div>
+    <div class="kicker rv">PORTAFOLIO</div>
+    <h2 class="h2 rv">Trabajo por <em>disciplina.</em></h2>
+    <p class="lead rv">Toca cada sección para explorar los proyectos. Los sitios web ya están en vivo; las demás áreas se llenan con nuestro trabajo más reciente.</p>
+
+    <div class="acc rv">
+      <!-- FOTOGRAFÍA -->
+      <div class="acc-item">
+        <button class="acc-head">
+          <span class="idx">01</span>
+          <span class="t"><h3>Fotografía</h3><p>RETRATO · PRODUCTO · EVENTOS</p></span>
+          <span class="pm">+</span>
+        </button>
+        <div class="acc-body"><div class="acc-body-in">
+          <div class="ph-grid">
+            <div class="ph-slot"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg><span>PRÓXIMAMENTE</span></div>
+            <div class="ph-slot"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg><span>PRÓXIMAMENTE</span></div>
+            <div class="ph-slot"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg><span>PRÓXIMAMENTE</span></div>
+          </div>
+        </div></div>
       </div>
-      <div class="work rv">
-        <div class="work-band" style="background:linear-gradient(135deg,#14101c,#3a2450);color:#f5f3ee"><span>BRILLANDO<br>JUNTOS</span></div>
-        <div class="work-body">
-          <h3>Brillando Juntos</h3>
-          <p>Sitio institucional de la organización: equipos, plantillas, torneos y comunidad en un solo lugar.</p>
-          <a href="https://lasmariaseliteclassic.github.io/" target="_blank" rel="noopener">VISITAR SITIO</a>
-        </div>
+
+      <!-- ARTE GRÁFICO -->
+      <div class="acc-item">
+        <button class="acc-head">
+          <span class="idx">02</span>
+          <span class="t"><h3>Arte Gráfico</h3><p>IDENTIDAD · PIEZAS DIGITALES</p></span>
+          <span class="pm">+</span>
+        </button>
+        <div class="acc-body"><div class="acc-body-in">
+          <div class="sub-t">LOGOS</div>
+          <div class="ph-grid">
+            <div class="ph-slot"><svg viewBox="0 0 24 24"><path d="M12 19l7-7a4.95 4.95 0 1 0-7-7l-7 7v7h7z"/><path d="M18 13l-7-7"/></svg><span>PRÓXIMAMENTE</span></div>
+            <div class="ph-slot"><svg viewBox="0 0 24 24"><path d="M12 19l7-7a4.95 4.95 0 1 0-7-7l-7 7v7h7z"/><path d="M18 13l-7-7"/></svg><span>PRÓXIMAMENTE</span></div>
+            <div class="ph-slot"><svg viewBox="0 0 24 24"><path d="M12 19l7-7a4.95 4.95 0 1 0-7-7l-7 7v7h7z"/><path d="M18 13l-7-7"/></svg><span>PRÓXIMAMENTE</span></div>
+          </div>
+          <div class="sub-t">ARTE GRÁFICO DIGITAL</div>
+          <div class="ph-grid">
+            <div class="ph-slot"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span>PRÓXIMAMENTE</span></div>
+            <div class="ph-slot"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span>PRÓXIMAMENTE</span></div>
+            <div class="ph-slot"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span>PRÓXIMAMENTE</span></div>
+          </div>
+        </div></div>
       </div>
-      <div class="work rv">
-        <div class="work-band" style="background:linear-gradient(135deg,#07271b,#0e5a3e);color:#f7e012"><span>ESMERALDAS<br>BALONCESTO</span></div>
-        <div class="work-body">
-          <h3>Esmeraldas de Barceloneta</h3>
-          <p>Presencia digital del equipo, con tienda de mercancía integrada y app instalable.</p>
-          <a href="https://esmeraldasdebarceloneta.github.io/" target="_blank" rel="noopener">VISITAR SITIO</a>
-        </div>
-      </div>
-      <div class="work rv">
-        <div class="work-band" style="background:linear-gradient(135deg,#2c1a44,#6b3fa0);color:#f5f3ee"><span>INSPIRAT<br>PSYCHOLOGY</span></div>
-        <div class="work-body">
-          <h3>Inspirat Psychology</h3>
-          <p>Web completa para un negocio de repasos, con portal de estudiantes y aplicación instalable.</p>
-          <a href="https://inspiratpsychology.github.io/" target="_blank" rel="noopener">VISITAR SITIO</a>
-        </div>
+
+      <!-- DISEÑO WEB -->
+      <div class="acc-item">
+        <button class="acc-head">
+          <span class="idx">03</span>
+          <span class="t"><h3>Diseño de Páginas Web</h3><p>SITIOS EN VIVO · TÓCALOS</p></span>
+          <span class="pm">+</span>
+        </button>
+        <div class="acc-body"><div class="acc-body-in">
+          <div class="work-grid" style="margin-top:10px">
+            <div class="work">
+              <div class="work-band" style="background:linear-gradient(135deg,#051d49,#0d3578);color:#f7e012"><span>EL VACILÓN<br>DEL BSN</span></div>
+              <div class="work-body">
+                <h3>El Vacilón del BSN</h3>
+                <p>Plataforma deportiva con una comunidad de más de 200,000 seguidores y cientos de millones de visualizaciones.</p>
+                <a href="https://elvacilondelbsn.github.io/" target="_blank" rel="noopener">VISITAR SITIO</a>
+              </div>
+            </div>
+            <div class="work">
+              <div class="work-band" style="background:linear-gradient(135deg,#14101c,#3a2450);color:#f5f3ee"><span>BRILLANDO<br>JUNTOS</span></div>
+              <div class="work-body">
+                <h3>Brillando Juntos</h3>
+                <p>Sitio institucional de la organización: equipos, plantillas, torneos y comunidad en un solo lugar.</p>
+                <a href="https://lasmariaseliteclassic.github.io/" target="_blank" rel="noopener">VISITAR SITIO</a>
+              </div>
+            </div>
+            <div class="work">
+              <div class="work-band" style="background:linear-gradient(135deg,#07271b,#0e5a3e);color:#f7e012"><span>ESMERALDAS<br>BALONCESTO</span></div>
+              <div class="work-body">
+                <h3>Esmeraldas de Barceloneta</h3>
+                <p>Presencia digital del equipo, con tienda de mercancía integrada y app instalable.</p>
+                <a href="https://esmeraldasdebarceloneta.github.io/" target="_blank" rel="noopener">VISITAR SITIO</a>
+              </div>
+            </div>
+            <div class="work">
+              <div class="work-band" style="background:linear-gradient(135deg,#2c1a44,#6b3fa0);color:#f5f3ee"><span>INSPIRAT<br>PSYCHOLOGY</span></div>
+              <div class="work-body">
+                <h3>Inspirat Psychology</h3>
+                <p>Web completa para un negocio de repasos, con portal de estudiantes y aplicación instalable.</p>
+                <a href="https://inspiratpsychology.github.io/" target="_blank" rel="noopener">VISITAR SITIO</a>
+              </div>
+            </div>
+          </div>
+        </div></div>
       </div>
     </div>
   </div>
@@ -382,6 +452,17 @@ document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
     requestAnimationFrame(tick);
   })(0);
 })();
+/* acordeón del portafolio: una sección abierta a la vez */
+document.querySelectorAll('.acc-head').forEach(function(h){
+  h.addEventListener('click',function(){
+    var item=h.closest('.acc-item'), body=item.querySelector('.acc-body'),
+        wasOpen=item.classList.contains('open');
+    document.querySelectorAll('.acc-item.open').forEach(function(o){
+      o.classList.remove('open'); o.querySelector('.acc-body').style.maxHeight=null;
+    });
+    if(!wasOpen){ item.classList.add('open'); body.style.maxHeight=body.scrollHeight+'px'; }
+  });
+});
 </script>
 </body>
 </html>
