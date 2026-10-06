@@ -118,7 +118,15 @@ footer{border-top:1px solid var(--line);padding:60px 0 44px;text-align:center;ba
 footer .brand{justify-content:center;margin-bottom:18px}
 footer p{color:var(--dim);font-size:12.5px;letter-spacing:.06em}
 footer .tag{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:19px;color:var(--gold);margin-bottom:22px}
-/* ---------- reveal ---------- */
+/* ---------- equipo ---------- */
+.team-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px;margin-top:64px}
+.member{border:1px solid var(--line);padding:54px 30px 48px;text-align:center;background:#0c0c0f;transition:.35s}
+.member:hover{border-color:rgba(211,171,99,.45);transform:translateY(-5px)}
+.member .pring{width:134px;height:134px;border-radius:50%;margin:0 auto 28px;border:1px solid rgba(211,171,99,.55);display:flex;align-items:center;justify-content:center;background:rgba(211,171,99,.05);overflow:hidden}
+.member .pring svg{width:46px;height:46px;stroke:rgba(211,171,99,.65);fill:none;stroke-width:1}
+.member .pring img.photo{width:100%;height:100%;object-fit:cover;display:block}
+.member h3{font-family:'Montserrat';font-size:14px;font-weight:400;letter-spacing:.26em;margin-bottom:12px}
+.member .soon{color:var(--dim);font-size:10px;letter-spacing:.32em;font-family:'Montserrat';font-weight:300}
 .rv{opacity:0;transform:translateY(34px);transition:opacity .9s cubic-bezier(.2,.6,.2,1),transform .9s cubic-bezier(.2,.6,.2,1)}
 .rv.on{opacity:1;transform:none}
 @media(max-width:860px){
@@ -271,23 +279,23 @@ footer .tag{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1
   <div class="wrap">
     <div class="kicker rv">EL EQUIPO</div>
     <h2 class="h2 rv">Las mentes <em>detrás.</em></h2>
-    <p class="lead rv">Un equipo compacto de estrategas, creadores y técnicos. Sin intermediarios: hablas directamente con quienes hacen el trabajo.</p>
-    <!-- Equipo: se reemplaza con nombres, roles y fotos reales cuando estén listos -->
-    <div class="team-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:22px;margin-top:64px">
-      <div class="member rv" style="border:1px solid var(--line);padding:54px 30px;text-align:center;background:#0c0c0f;transition:.35s">
-        <div style="width:112px;height:112px;border-radius:50%;margin:0 auto 26px;border:1px solid rgba(211,171,99,.6);display:flex;align-items:center;justify-content:center;color:var(--gold);font-family:'Montserrat';font-weight:300;font-size:27px;letter-spacing:.1em;background:rgba(211,171,99,.06)">EC</div>
-        <h3 style="font-family:'Montserrat';font-size:14px;font-weight:400;letter-spacing:.26em;margin-bottom:10px">ESTRATEGIA</h3>
-        <p style="color:var(--gray);font-size:13px;letter-spacing:.1em">VENTAS · CRECIMIENTO</p>
+    <p class="lead rv">Tres áreas, un mismo estándar de excelencia. Sin intermediarios: hablas directamente con quienes hacen el trabajo.</p>
+    <!-- EQUIPO: para poner cada foto, sustituir el <svg> dentro de .pring por: <img class="photo" src="assets/equipo-N.jpg" alt="Nombre"> -->
+    <div class="team-grid">
+      <div class="member rv">
+        <div class="pring"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6.5 8-6.5s8 2.5 8 6.5"/></svg></div>
+        <h3>MANEJO DE REDES</h3>
+        <div class="soon">FOTO PRÓXIMAMENTE</div>
       </div>
-      <div class="member rv" style="border:1px solid var(--line);padding:54px 30px;text-align:center;background:#0c0c0f;transition:.35s">
-        <div style="width:112px;height:112px;border-radius:50%;margin:0 auto 26px;border:1px solid rgba(211,171,99,.6);display:flex;align-items:center;justify-content:center;color:var(--gold);font-family:'Montserrat';font-weight:300;font-size:27px;letter-spacing:.1em;background:rgba(211,171,99,.06)">EC</div>
-        <h3 style="font-family:'Montserrat';font-size:14px;font-weight:400;letter-spacing:.26em;margin-bottom:10px">CREATIVIDAD</h3>
-        <p style="color:var(--gray);font-size:13px;letter-spacing:.1em">DISEÑO · CONTENIDO</p>
+      <div class="member rv">
+        <div class="pring"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6.5 8-6.5s8 2.5 8 6.5"/></svg></div>
+        <h3>DISEÑO GRÁFICO</h3>
+        <div class="soon">FOTO PRÓXIMAMENTE</div>
       </div>
-      <div class="member rv" style="border:1px solid var(--line);padding:54px 30px;text-align:center;background:#0c0c0f;transition:.35s">
-        <div style="width:112px;height:112px;border-radius:50%;margin:0 auto 26px;border:1px solid rgba(211,171,99,.6);display:flex;align-items:center;justify-content:center;color:var(--gold);font-family:'Montserrat';font-weight:300;font-size:27px;letter-spacing:.1em;background:rgba(211,171,99,.06)">EC</div>
-        <h3 style="font-family:'Montserrat';font-size:14px;font-weight:400;letter-spacing:.26em;margin-bottom:10px">PRODUCCIÓN</h3>
-        <p style="color:var(--gray);font-size:13px;letter-spacing:.1em">WEB · TRANSMISIÓN</p>
+      <div class="member rv">
+        <div class="pring"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6.5 8-6.5s8 2.5 8 6.5"/></svg></div>
+        <h3>DISEÑO DE WEB</h3>
+        <div class="soon">FOTO PRÓXIMAMENTE</div>
       </div>
     </div>
   </div>
