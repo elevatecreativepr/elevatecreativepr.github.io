@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Elevate Creative — Elevamos las ventas de tu negocio</title>
 <meta name="description" content="Agencia de mercadeo digital: convertimos la atención en ingresos. Redes sociales, diseño, fotografía, transmisión en vivo y páginas web.">
+<meta name="theme-color" content="#060607">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Montserrat:wght@200;300;400;500&family=Inter:wght@300;400&display=swap" rel="stylesheet">
@@ -397,6 +400,11 @@ bioModal.addEventListener('click',function(e){if(e.target===bioModal)closeBio()}
 document.addEventListener('keydown',function(e){if(e.key==='Escape')closeBio()});
 /* polvo dorado flotante en el hero */
 (function(){var cv=document.getElementById('dust'),ctx=cv.getContext('2d'),W,H,ps=[];function size(){W=cv.width=cv.offsetWidth;H=cv.height=cv.offsetHeight}size();window.addEventListener('resize',size);for(var i=0;i<60;i++)ps.push({x:Math.random(),y:Math.random(),r:Math.random()*1.6+.4,s:Math.random()*.0005+.0002,o:Math.random()*.45+.12,ph:Math.random()*6.28});(function tick(t){ctx.clearRect(0,0,W,H);for(var i=0;i<ps.length;i++){var p=ps[i];p.y-=p.s;if(p.y<-.02){p.y=1.02;p.x=Math.random()}var tw=.6+.4*Math.sin(t/900+p.ph);ctx.beginPath();ctx.arc(p.x*W,p.y*H,p.r,0,6.28);ctx.fillStyle='rgba(211,171,99,'+(p.o*tw).toFixed(3)+')';ctx.fill()}requestAnimationFrame(tick)})(0)})();
+</script>
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => navigator.serviceWorker.register('sw.js').catch(()=>{}));
+}
 </script>
 </body>
 </html>
