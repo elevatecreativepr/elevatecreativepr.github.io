@@ -93,6 +93,8 @@ nav.scrolled{background:rgba(6,6,7,.78);backdrop-filter:blur(16px);-webkit-backd
 .ph-slot:hover{border-color:rgba(211,171,99,.6)}
 .ph-slot svg{width:30px;height:30px;stroke:rgba(211,171,99,.55);fill:none;stroke-width:1}
 .ph-slot span{font-size:10px;letter-spacing:.32em;font-family:'Montserrat';font-weight:300}
+.ph-slot.photo{padding:0;border-style:solid;overflow:hidden}
+.ph-slot.photo img{width:100%;height:100%;object-fit:cover;display:block}
 .work-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:22px;margin-top:10px}
 .work{border:1px solid var(--line);background:#101013;overflow:hidden;transition:.45s}
 .work:hover{transform:translateY(-7px);border-color:rgba(211,171,99,.55);box-shadow:0 28px 60px rgba(0,0,0,.5)}
@@ -248,9 +250,9 @@ footer p{color:var(--dim);font-size:12px;letter-spacing:.08em}
       <div class="acc-item">
         <button class="acc-head"><span class="idx">01</span><span class="t"><h3>Fotografía</h3><p>RETRATO · PRODUCTO · EVENTOS</p></span><span class="pm">+</span></button>
         <div class="acc-body"><div class="acc-body-in"><div class="ph-grid">
-          <div class="ph-slot"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg><span>PRÓXIMAMENTE</span></div>
-          <div class="ph-slot"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg><span>PRÓXIMAMENTE</span></div>
-          <div class="ph-slot"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg><span>PRÓXIMAMENTE</span></div>
+          <div class="ph-slot photo"><img src="assets/foto-accion.jpg" alt="Acción de juego — Las Patriotas de Lares" loading="lazy"></div>
+          <div class="ph-slot photo"><img src="assets/foto-mascota.jpg" alt="Mascota del equipo en la cancha" loading="lazy"></div>
+          <div class="ph-slot photo"><img src="assets/foto-banquillo.jpg" alt="Celebración del banquillo" loading="lazy"></div>
         </div></div></div>
       </div>
       <div class="acc-item">
