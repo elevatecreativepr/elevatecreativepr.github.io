@@ -36,11 +36,9 @@ nav.scrolled{background:rgba(6,6,7,.78);backdrop-filter:blur(16px);-webkit-backd
 .nav-cta:hover{color:var(--gold);border-color:var(--gold)}
 /* ---------- hero: el logo protagonista ---------- */
 .hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden;padding:120px 24px 80px;
-  background:radial-gradient(ellipse 75% 60% at 50% 42%, rgba(211,171,99,.07), transparent 65%), var(--black)}
+  background:var(--black)}
 #dust{position:absolute;inset:0;pointer-events:none}
 .logo-stage{position:relative;display:inline-block;margin-bottom:8px;z-index:2}
-.logo-glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-55%);width:min(920px,120vw);aspect-ratio:1;background:radial-gradient(circle,rgba(211,171,99,.15),transparent 62%);pointer-events:none;animation:breathe 6s ease-in-out infinite}
-@keyframes breathe{0%,100%{opacity:.75;transform:translate(-50%,-55%) scale(1)}50%{opacity:1;transform:translate(-50%,-55%) scale(1.06)}}
 .logo-stage img{width:min(600px,84vw);height:auto;display:block;position:relative;z-index:1;animation:floaty 7s ease-in-out infinite;filter:drop-shadow(0 18px 60px rgba(0,0,0,.7)) drop-shadow(0 0 70px rgba(211,171,99,.16))}
 @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
 .logo-stage::after{content:"";position:absolute;inset:-30%;z-index:2;background:radial-gradient(ellipse 42% 36% at 50% 50%,rgba(255,240,210,.13),transparent 70%);filter:blur(28px);mix-blend-mode:screen;animation:drift 9s ease-in-out infinite;pointer-events:none}
@@ -189,7 +187,6 @@ footer p{color:var(--dim);font-size:12px;letter-spacing:.08em}
 <header class="hero" id="top">
   <canvas id="dust"></canvas>
   <div class="logo-stage rv">
-    <div class="logo-glow"></div>
     <img src="assets/logo-lockup.png" alt="Elevate Creative">
   </div>
   <div class="hero-div rv"><span>◆</span></div>
