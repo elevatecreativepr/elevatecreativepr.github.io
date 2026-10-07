@@ -37,7 +37,6 @@ nav.scrolled{background:rgba(6,6,7,.78);backdrop-filter:blur(16px);-webkit-backd
 /* ---------- hero: el logo protagonista ---------- */
 .hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden;padding:120px 24px 80px;
   background:var(--black)}
-#dust{position:absolute;inset:0;pointer-events:none}
 .logo-stage{position:relative;display:inline-block;margin-bottom:8px;z-index:2}
 .logo-stage img{width:min(600px,84vw);height:auto;display:block;position:relative;z-index:1;animation:floaty 7s ease-in-out infinite;filter:drop-shadow(0 18px 60px rgba(0,0,0,.7)) drop-shadow(0 0 70px rgba(211,171,99,.16))}
 @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
@@ -185,7 +184,6 @@ footer p{color:var(--dim);font-size:12px;letter-spacing:.08em}
 </div></nav>
 
 <header class="hero" id="top">
-  <canvas id="dust"></canvas>
   <div class="logo-stage rv">
     <img src="assets/logo-lockup.png" alt="Elevate Creative">
   </div>
@@ -374,7 +372,6 @@ footer p{color:var(--dim);font-size:12px;letter-spacing:.08em}
     <p id="bioText"></p>
   </div>
 </div>
-
 <script>
 var nav=document.getElementById('nav');
 window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',window.scrollY>40)},{passive:true});
@@ -396,7 +393,7 @@ document.getElementById('bioClose').addEventListener('click',closeBio);
 bioModal.addEventListener('click',function(e){if(e.target===bioModal)closeBio()});
 document.addEventListener('keydown',function(e){if(e.key==='Escape')closeBio()});
 /* polvo dorado flotante en el hero */
-(function(){var cv=document.getElementById('dust'),ctx=cv.getContext('2d'),W,H,ps=[];function size(){W=cv.width=cv.offsetWidth;H=cv.height=cv.offsetHeight}size();window.addEventListener('resize',size);for(var i=0;i<60;i++)ps.push({x:Math.random(),y:Math.random(),r:Math.random()*1.6+.4,s:Math.random()*.0005+.0002,o:Math.random()*.45+.12,ph:Math.random()*6.28});(function tick(t){ctx.clearRect(0,0,W,H);for(var i=0;i<ps.length;i++){var p=ps[i];p.y-=p.s;if(p.y<-.02){p.y=1.02;p.x=Math.random()}var tw=.6+.4*Math.sin(t/900+p.ph);ctx.beginPath();ctx.arc(p.x*W,p.y*H,p.r,0,6.28);ctx.fillStyle='rgba(211,171,99,'+(p.o*tw).toFixed(3)+')';ctx.fill()}requestAnimationFrame(tick)})(0)})();
+
 </script>
 <script>
 if ('serviceWorker' in navigator) {
