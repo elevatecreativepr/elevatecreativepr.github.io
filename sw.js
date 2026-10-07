@@ -1,7 +1,7 @@
 /* Elevate Creative — service worker de la PWA.
    Estrategia: sirve la copia guardada al instante y actualiza en segundo plano,
    así la app abre rápido y sigue funcionando sin internet. */
-const CACHE = 'elevate-pwa-v1';
+const CACHE = 'elevate-pwa-v1'; /* build limpio */
 const CORE = [
   './',
   'index.html',
